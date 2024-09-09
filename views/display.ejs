@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+  </head>
+  <body>
+    <div>
+      <%if(locals.brandProducts){%>
+      <div class="products">
+        <h2>All products of selected brand:</h2>
+        <br />
+        <%brandProducts.forEach(p=>{%>
+        <p>ID:<%= p.product_id%> | <%= p.product_name%></p>
+        <p>Description:<%= p.description%></p>
+        <p>Price:<%= p.price%></p>
+        <p>Quantity left:<%= p.quantity%></p>
+        <hr />
+        <br />
+        <% })%>
+      </div>
+      <%}%> <%if(locals.categoryProducts){%>
+      <div class="products">
+        <h2>All products of selected category:</h2>
+        <br />
+        <%categoryProducts.forEach(p=>{%>
+        <p>ID:<%= p.product_id%> | <%= p.product_name%></p>
+        <p>Description:<%= p.description%></p>
+        <p>Price:<%= p.price%></p>
+        <p>Quantity left:<%= p.quantity%></p>
+        <hr />
+        <br />
+        <% })%>
+      </div>
+      <%}%>
+      <h2><a href="/products">Check all products</a><br /></h2>
+    </div>
+  </body>
+</html>

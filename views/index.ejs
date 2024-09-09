@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+  </head>
+  <body>
+    <div>
+      <%if(locals.categories){%>
+      <div class="categories">
+        <h2>Check products by category:</h2>
+        <br />
+        <%categories.forEach(c=>{%>
+        <a href="/category/<%= c.category_id %>"><%= c.category_name %></a
+        ><br />
+        <% })%>
+      </div>
+      <%}%> <%if (locals.brands){%>
+      <div class="brands">
+        <h2>Check products by brand:</h2>
+        <br />
+        <%brands.forEach(b=>{%>
+        <a href="/brand/<%= b.brand_id %>"><%= b.brand_name %></a><br />
+        <% })%>
+      </div>
+      <%}%>
+      <h2><a href="/products">Check all products</a><br /></h2>
+    </div>
+  </body>
+</html>
